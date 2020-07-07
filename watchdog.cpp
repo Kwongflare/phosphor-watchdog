@@ -37,6 +37,7 @@ bool Watchdog::enabled(bool value)
 {
     if (!value)
     {
+	log<level::INFO>("this is ryan's log: someone disabled the watchdog");
         // Make sure we accurately reflect our enabled state to the
         // tryFallbackOrDisable() call
         WatchdogInherits::enabled(value);
