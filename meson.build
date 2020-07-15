@@ -44,7 +44,9 @@ executable(
   implicit_include_directories: false,
   dependencies: [
     sdbusplus
-  ])
+  ],
+  install=true,
+  install_dir: get_option('bindir'))
 
 if not build_tests.disabled()
   subdir('test')
