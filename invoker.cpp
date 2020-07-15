@@ -1,7 +1,7 @@
 #include <cstdint>
 #include <iostream>
 #include <sdbusplus/bus.hpp>
-#include <sdbusplus/message/append.hpp>
+//#include <sdbusplus/message/append.hpp>
 
 /** An example dbus client application.
  *   *  Calls org.freedesktop.login1's ListUsers interface to find all active
@@ -16,11 +16,11 @@ int main()
     auto m =
         b.new_method_call("xyz.openbmc_project.Control", "/xyz/openbmc_project/Control",
                 "xyz.openbmc_project.Control.Host", "Command");
-    sdbusplus::message::append("xyz.openbmc_project.Control.Host", m, 1);
+//    sdbusplus::message::append("xyz.openbmc_project.Control.Host", m, 1);
 
     auto reply = b.call(m);
 
-    std::cout << std::get<std::string>(reply) << "\n";
+ //   std::cout << std::get<std::string>(reply) << "\n";
 
     return 0;
 
