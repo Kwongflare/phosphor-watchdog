@@ -38,6 +38,14 @@ executable(
   install: true,
   install_dir: get_option('bindir'))
 
+executable(
+  'ryan-invoker',
+  'invoker.cpp',
+  implicit_include_directories: false,
+  dependencies: [
+    sdbusplus
+  ])
+
 if not build_tests.disabled()
   subdir('test')
 endif
