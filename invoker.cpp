@@ -12,13 +12,17 @@ int main()
 {
     using namespace sdbusplus;
 
+    printf("Controlla\n");
     auto b = bus::new_default_system();
+    printf("Bus found\n");
     auto m =
         b.new_method_call("xyz.openbmc_project.Control", "/xyz/openbmc_project/Control",
                 "xyz.openbmc_project.Control.Host", "Command");
+    printf("Message created\n");
 //    sdbusplus::message::append("xyz.openbmc_project.Control.Host", m, 1);
 
     auto reply = b.call(m);
+    printf("Method called \n");
 
  //   std::cout << std::get<std::string>(reply) << "\n";
 
