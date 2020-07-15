@@ -26,20 +26,6 @@ libwatchdog = static_library(
 
 executable(
   'phosphor-watchdog',
-  'mainapp.cpp',
-  implicit_include_directories: false,
-  link_with: libwatchdog,
-  dependencies: [
-    phosphor_logging,
-    phosphor_dbus_interfaces,
-    sdbusplus,
-    sdeventplus,
-  ],
-  install: true,
-  install_dir: get_option('bindir'))
-
-executable(
-  'ryan-invoker',
   'invoker.cpp',
   implicit_include_directories: false,
   dependencies: [
