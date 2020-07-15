@@ -28,10 +28,14 @@ executable(
   'phosphor-watchdog',
   'invoker.cpp',
   implicit_include_directories: false,
+  link_with: libwatchdog,
   dependencies: [
-    sdbusplus
+    phosphor_logging,
+    phosphor_dbus_interfaces,
+    sdbusplus,
+    sdeventplus,
   ],
-  install=true,
+  install: true,
   install_dir: get_option('bindir'))
 
 if not build_tests.disabled()
