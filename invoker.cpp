@@ -25,7 +25,7 @@ int main()
     auto reply = b.call(m);
     printf("Method called \n");
 
- //   std::cout << std::get<std::string>(reply) << "\n";
+    std::cout << std::get<std::string>(reply) << "\n";
 
     return 0;
 
