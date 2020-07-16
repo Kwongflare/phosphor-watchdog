@@ -20,12 +20,17 @@ int main()
                 "org.freedesktop.DBus", "ListNames");
     printf("Method call created\n");
 
-//    sdbusplus::message::append("xyz.openbmc_project.Control.Host", m, 1);
-
     auto reply = b.call(m);
     printf("Method called \n");
-    
-    printf("%s", reply[0]);
+ 
+    std::vector<std::string>> names;
+    reply.read(names);
+
+    for (auto& name : names)
+    {
+        std::cout << std::get<std::string>(user) << "\n";
+
+    }
 
     return 0;
 
