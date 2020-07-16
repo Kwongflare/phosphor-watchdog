@@ -4,9 +4,9 @@
 #include <sdbusplus/message/append.hpp>
 
 /** An example dbus client application.
- *   *  Calls org.freedesktop.login1's ListUsers interface to find all active
- *     *  users in the system and displays their username.
- *       */
+ **  Calls org.freedesktop.login1's ListUsers interface to find all active
+ **  users in the system and displays their username.
+ **/
 
 int main()
 {
@@ -28,7 +28,7 @@ int main()
 
     for (auto& name : names)
     {
-        printf("%s\n", std::get<std::string>(name));
+        printf("%s\n", std::string(name).c_str());
     }
 
     return 0;
