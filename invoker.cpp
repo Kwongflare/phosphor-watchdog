@@ -22,13 +22,13 @@ int main()
 
     auto reply = b.call(m);
     printf("Method called \n");
- 
-    std::vector<std::string> names;
+
+    std::vector<std::tuple<uint32_t, std::string, message::object_path>> names;
     reply.read(names);
 
     for (auto& name : names)
     {
-        printf("%s\n", name);
+        printf("%s\n", std::get<std::string>(user));
     }
 
     return 0;
