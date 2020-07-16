@@ -24,8 +24,8 @@ int main()
 
     auto reply = b.call(m);
     printf("Method called \n");
-
-    printf("%s", reply);
+    
+    printf("%s", reply[0]);
 
     return 0;
 
