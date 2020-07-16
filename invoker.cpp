@@ -28,7 +28,7 @@ int main()
 
     for (auto& name : names)
     {
-        std::cout << std::get<std::string>(names) << "\n";
+        printf("%s\n", name);
     }
 
     return 0;
