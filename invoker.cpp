@@ -16,8 +16,8 @@ int main()
     auto b = bus::new_default_system();
     printf("Bus found\n");
     auto m =
-        b.new_method_call("xyz.openbmc_project.Ipmi.Host", "/xyz/openbmc_project/Ipmi",
-                "xyz.openbmc_project.Control.Server", "execute");
+        b.new_method_call("org.freedesktop.DBus", "/org/freedesktop/DBus",
+                "org.freedesktop.DBus", "ListNames");
     printf("Method call created\n");
 
 //    sdbusplus::message::append("xyz.openbmc_project.Control.Host", m, 1);
