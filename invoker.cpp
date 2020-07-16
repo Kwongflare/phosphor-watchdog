@@ -23,13 +23,12 @@ int main()
     auto reply = b.call(m);
     printf("Method called \n");
  
-    std::vector<std::string>> names;
+    std::vector<std::string> names;
     reply.read(names);
 
     for (auto& name : names)
     {
-        std::cout << std::get<std::string>(user) << "\n";
-
+        std::cout << std::get<std::string>(names) << "\n";
     }
 
     return 0;
